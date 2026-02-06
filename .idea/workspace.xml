@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97270944-711f-4361-a7d2-c03478bae931" name="Changes" comment="补充依赖">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/portofino/arrow/ArrowFlightSQLSuite.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/portofino/arrow/ArrowFlightSQLSuite.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/analysis/compile" beforeDir="false" afterPath="$PROJECT_DIR$/target/analysis/compile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/arrow-flight-sql-test-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/arrow-flight-sql-test-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/portofino/arrow/ArrowFlightSQLSuite$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/portofino/arrow/ArrowFlightSQLSuite$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-arrow-flight-sql-test-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-arrow-flight-sql-test-1.0.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +62,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Application.ArrowFlightSQLSuite">
     <configuration name="ArrowFlightSQLSuite" type="Application" factoryName="Application" temporary="true">
@@ -127,7 +134,8 @@
       <workItem from="1770284457650" duration="13587000" />
       <workItem from="1770303551834" duration="1711000" />
       <workItem from="1770340298167" duration="5813000" />
-      <workItem from="1770347005731" duration="2804000" />
+      <workItem from="1770347005731" duration="6866000" />
+      <workItem from="1770366022045" duration="1784000" />
     </task>
     <task id="LOCAL-00001" summary="test0205">
       <created>1770303984691</created>

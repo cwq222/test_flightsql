@@ -97,6 +97,7 @@ object ArrowFlightSQLSuite {
       val statement = connection.createStatement()
       try {
         println(s"Executing query: $query")
+        val queryStart = System.currentTimeMillis()
         val resultSet = statement.executeQuery(query)
         val metadata = resultSet.getMetaData
         val columnCount = metadata.getColumnCount
@@ -107,19 +108,29 @@ object ArrowFlightSQLSuite {
           println(s"  ${metadata.getColumnName(i)}: ${metadata.getColumnTypeName(i)}")
         }
 
-        // 打印数据
+        // 打印数据：读取全表所有行，仅打印前20行
         println("\nData:")
-        var rowCount = 0
-        while (resultSet.next() && rowCount < 20) {
-          val values = (1 to columnCount).map { i =>
-            val value = resultSet.getObject(i)
-            if (resultSet.wasNull()) "NULL" else value.toString
+        var printRowCount = 0 // 控制仅打印前20行
+        var totalRowCount = 0L // 统计全表总行数
+        // 仅保留resultSet.next()，循环读取全表所有行
+        while (resultSet.next()) {
+          totalRowCount += 1 // 每读一行，总行数+1（必执行，统计全表）
+          // 仅前20行执行打印逻辑
+          if (printRowCount < 20) {
+            val values = (1 to columnCount).map { i =>
+              val value = resultSet.getObject(i)
+              if (resultSet.wasNull()) "NULL" else value.toString
+            }
+            println(s"  ${values.mkString(", ")}")
+            printRowCount += 1 // 打印行计数，到20后不再打印
           }
-          println(s"  ${values.mkString(", ")}")
-          rowCount += 1
         }
+        val queryEnd = System.currentTimeMillis()
+        val cost = queryEnd - queryStart
+        // 打印结果：补充全表总行数，耗时为读取全表的真实用时
+        println(s"\n✓ Query executed successfully (total rows: $totalRowCount, showing first $printRowCount rows)")
+        println(s"✓ JDBC 读取全表总耗时: $cost 毫秒(ms)")
 
-        println(s"\n✓ Query executed successfully (showing first $rowCount rows)")
       } finally {
         statement.close()
       }
@@ -161,6 +172,7 @@ object ArrowFlightSQLSuite {
       statement = connection.createStatement()
       statement.setSqlQuery(query)
       println(s"✓ Executing query: $query")
+      val queryStart = System.currentTimeMillis()
       queryResult = statement.executeQuery()
 
       // 5. 获取 ArrowReader 来读取结果集
@@ -197,7 +209,10 @@ object ArrowFlightSQLSuite {
           totalRowCount += 1
         }
       }
+      val queryEnd = System.currentTimeMillis()
+      val cost = queryEnd - queryStart
       println(s"  总行数:   $totalRowCount")
+      println(s"✓ ADBC 数据读取总耗时: $cost 毫秒(ms)")
     } catch {
       case e: Exception =>
         println(s"❌ ADBC Native API failed: ${e.getMessage}")
