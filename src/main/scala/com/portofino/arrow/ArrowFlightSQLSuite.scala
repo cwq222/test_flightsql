@@ -28,12 +28,20 @@ object ArrowFlightSQLSuite {
     println("Arrow Flight SQL Test")
     println("=" * 60)
 
-    // 直接定义参数，不再依赖 SparkSession
-    val host = System.getProperty("arrow.host", "127.0.0.1")
-    val port = System.getProperty("arrow.port", "8070")
-    val user = System.getProperty("arrow.user", "root")
-    val password = System.getProperty("arrow.password", "")
-    val query = System.getProperty("arrow.query", "SELECT * FROM test_db.user_visit")
+    // 从配置文件加载参数
+    val props = new Properties()
+    val inputStream = getClass.getResourceAsStream("/doris.properties")
+    if (inputStream != null) {
+      props.load(inputStream)
+      inputStream.close()
+    } else {
+      println("Warning: doris.properties not found in classpath, using default values.")
+    }
+    val host = props.getProperty("host")
+    val port = props.getProperty("port")
+    val user = props.getProperty("user")
+    val password = props.getProperty("password")
+    val query = props.getProperty("query")
 
     try {
 
