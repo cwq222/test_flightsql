@@ -227,7 +227,7 @@ object ArrowFlightSQLSuite {
               }
             }
             println(s"  ${rowValues. mkString(", ")}")
-            printedRows += 1
+            printedRows +=  1
           }
           totalRowCount += 1
         }
