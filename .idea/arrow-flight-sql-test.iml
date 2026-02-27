@@ -141,9 +141,6 @@
     <orderEntry type="library" name="Maven: org.apache.parquet:parquet-format-structures:1.13.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.parquet:parquet-jackson:1.13.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.arrow:flight-sql-jdbc-core:17.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.arrow:arrow-memory-core:17.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.arrow:arrow-vector:17.0.0" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.25.1" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.110.Final" level="project" />
     <orderEntry type="library" name="Maven: org.apache.arrow:flight-sql:17.0.0" level="project" />
@@ -178,6 +175,9 @@
     <orderEntry type="library" name="Maven: io.grpc:grpc-api:1.63.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.arrow:arrow-memory-netty:17.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.arrow:arrow-memory-netty-buffer-patch:17.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.arrow:arrow-memory-core:17.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.arrow:arrow-vector:17.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.calcite.avatica:avatica-core:1.25.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.calcite.avatica:avatica-metrics:1.25.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.httpcomponents.client5:httpclient5:5.2.1" level="project" />
@@ -207,5 +207,6 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.15.2" level="project" />
     <orderEntry type="library" name="Maven: com.google.flatbuffers:flatbuffers-java:2.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.github.ben-manes.caffeine:caffeine:3.1.8" level="project" />
+    <orderEntry type="library" name="Maven: com.mysql:mysql-connector-j:8.0.33" level="project" />
   </component>
 </module>
